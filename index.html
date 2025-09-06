@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer Feedback System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-chalkboard-teacher"></i></span>
+                <span class="logo-text">Trainer<span>Feedback</span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Trainer Feedback <span>System</span></h1>
+                <p class="hero-description">Help us improve the learning experience by providing your valuable feedback</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Feedback Form Section -->
+    <section class="section feedback-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Submit Your <span>Feedback</span></h2>
+                <p class="section-subtitle">Your opinion matters to us</p>
+            </div>
+
+            <form id="feedbackForm" action="https://formsubmit.co/your-central-email@gmail.com" method="POST" class="feedback-form">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="New Trainer Feedback Submission">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://yourusername.github.io/repo-name/thank-you.html">
+                <input type="hidden" name="_captcha" value="false">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="submittedBy">Your Name</label>
+                        <input type="text" id="submittedBy" name="submittedBy" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="trainerName">Trainer's Name</label>
+                        <select id="trainerName" name="trainerName" required>
+                            <option value="">Select a trainer</option>
+                            <option value="John Smith">John Smith</option>
+                            <option value="Sarah Johnson">Sarah Johnson</option>
+                            <option value="Mike Chen">Mike Chen</option>
+                            <option value="Emily Davis">Emily Davis</option>
+                            <option value="David Wilson">David Wilson</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Rating Sections -->
+                <div class="rating-category">
+                    <h3>Topics Covered</h3>
+                    <p>How well were the training topics covered?</p>
+                    <div class="rating-slider">
+                        <input type="range" id="topics" name="topics" min="1" max="10" value="5" oninput="updateRating(this)">
+                        <div class="rating-labels">
+                            <span>1 (Poor)</span>
+                            <span class="rating-value" id="topicsValue">5</span>
+                            <span>10 (Excellent)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rating-category">
+                    <h3>Concept Clarity</h3>
+                    <p>How clear were the concepts explained?</p>
+                    <div class="rating-slider">
+                        <input type="range" id="concepts" name="concepts" min="1" max="10" value="5" oninput="updateRating(this)">
+                        <div class="rating-labels">
+                            <span>1 (Poor)</span>
+                            <span class="rating-value" id="conceptsValue">5</span>
+                            <span>10 (Excellent)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rating-category">
+                    <h3>Interaction & Engagement</h3>
+                    <p>How engaging was the training session?</p>
+                    <div class="rating-slider">
+                        <input type="range" id="interaction" name="interaction" min="1" max="10" value="5" oninput="updateRating(this)">
+                        <div class="rating-labels">
+                            <span>1 (Poor)</span>
+                            <span class="rating-value" id="interactionValue">5</span>
+                            <span>10 (Excellent)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rating-category">
+                    <h3>Delivery Style</h3>
+                    <p>How effective was the trainer's delivery style?</p>
+                    <div class="rating-slider">
+                        <input type="range" id="delivery" name="delivery" min="1" max="10" value="5" oninput="updateRating(this)">
+                        <div class="rating-labels">
+                            <span>1 (Poor)</span>
+                            <span class="rating-value" id="deliveryValue">5</span>
+                            <span>10 (Excellent)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overall Rating Display -->
+                <div class="overall-rating">
+                    <h3>Overall Rating</h3>
+                    <div class="rating-display">
+                        <span class="rating-number" id="overallRating">5.0</span>
+                        <span class="rating-out-of">/ 10</span>
+                    </div>
+                    <p class="rating-comment" id="ratingComment">Good</p>
+                </div>
+
+                <button type="submit" class="cta-button submit-button">
+                    <i class="fas fa-paper-plane"></i> Submit Feedback
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Trainer Feedback System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
