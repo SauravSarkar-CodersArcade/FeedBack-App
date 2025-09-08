@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         feedbackForm.addEventListener('submit', function(e) {
             // Add loading state for better user experience
             const submitButton = this.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
+            const originalText = submitButton.innerHTML;
             
             // Show loading state
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
@@ -44,17 +44,19 @@ function updateOverallRating() {
     
     document.getElementById('overallRating').textContent = roundedRating;
     
-    // Update rating comment based on score
+    // Update rating comment based on score for 1-5 scale
     const commentElement = document.getElementById('ratingComment');
-    if (overallRating >= 9) {
-        commentElement.textContent = 'Outstanding!';
-    } else if (overallRating >= 7) {
-        commentElement.textContent = 'Excellent';
-    } else if (overallRating >= 5) {
+    if (overallRating >= 4.5) {
+        commentElement.textContent = 'Excellent!';
+    } else if (overallRating >= 4.0) {
+        commentElement.textContent = 'Very Good';
+    } else if (overallRating >= 3.0) {
         commentElement.textContent = 'Good';
-    } else if (overallRating >= 3) {
-        commentElement.textContent = 'Fair';
+    } else if (overallRating >= 2.0) {
+        commentElement.textContent = 'Average';
+    } else if (overallRating >= 1.5) {
+        commentElement.textContent = 'Below Average';
     } else {
-        commentElement.textContent = 'Needs Improvement';
+        commentElement.textContent = 'Poor';
     }
 }
