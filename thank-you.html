@@ -1,53 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - Trainer Feedback System</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You - Coders Arcade | Trainer Feedback System</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+:root {
+    --primary-green: #00a859;
+    --white: #ffffff;
+    --black: #0a0a0a;
+    --dark-gray: #1a1a1a;
+}
+
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--white);
+    background-color: var(--black);
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(10,10,10,0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 168, 89, 0.1);
+}
+.navbar .container { display:flex; justify-content:center; align-items:center; gap:15px; }
+.logo-text { font-family:'Montserrat', sans-serif; font-weight:800; font-size:1.5rem; color: var(--white);}
+.logo-icon img { height:50px; transition: transform 0.3s ease; }
+.logo-icon img:hover { transform: scale(1.05); }
+.logo-tagline { font-family:'Open Sans', sans-serif; font-weight:500; font-size:1rem; color: var(--primary-green); }
+
+/* Hero Section */
+.hero.thank-you {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+    padding: 20px;
+}
+
+.section-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, var(--white) 0%, var(--primary-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: bounce 1s ease;
+}
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--primary-green);
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+/* Checkmark animation */
+.checkmark {
+    font-size: 6rem;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    animation: popBounce 1s ease forwards;
+}
+
+/* Heading & Checkmark animations */
+@keyframes popBounce {
+    0% { transform: scale(0); opacity:0; }
+    50% { transform: scale(1.5); opacity:1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(-50px); opacity:0; }
+    60% { transform: translateY(10px); opacity:1; }
+    80% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity:0; transform: translateY(10px);}
+    to { opacity:1; transform: translateY(0);}
+}
+
+/* Thank you message */
+.thank-you-message h3 {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    animation: fadeIn 1.5s ease forwards;
+}
+.thank-you-message p {
+    color: #bbb;
+    font-size: 1.05rem;
+    max-width:600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.5;
+    animation: fadeIn 2s ease forwards;
+}
+
+/* Buttons Row */
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.cta-button {
+    display:inline-block;
+    padding:15px 35px;
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    font-size:1.1rem;
+    border:2px solid var(--primary-green);
+    transition: all 0.3s ease;
+}
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--primary-green);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 168, 89, 0.3);
+}
+
+.youtube-button {
+    background-color:#FF0000;
+    border-color:#FF0000;
+}
+.youtube-button:hover {
+    background-color:transparent;
+    color:#FF0000;
+    box-shadow: 0 10px 25px rgba(255,0,0,0.3);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 30px 0;
+    text-align:center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.feedback-summary {
+    margin: 30px auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.summary-card {
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,168,89,0.3);
+    border-radius: 12px;
+    padding: 20px;
+    color: var(--white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.summary-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    text-align: center;
+}
+
+.summary-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.summary-card li {
+    margin: 8px 0;
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.summary-card li strong {
+    color: var(--primary-green);
+}
+
+
+/* Responsive */
+@media(max-width:768px){
+    .section-header h1 { font-size:2rem; }
+    .checkmark { font-size:4.5rem; }
+}
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <span class="logo-icon"><i class="fas fa-chalkboard-teacher"></i></span>
-                <span class="logo-text">Trainer<span>Feedback</span></span>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="container">
+        <span class="logo-text">Coders Arcade</span>
+        <span class="logo-icon"><img src="logo.png" alt="Coders Arcade Logo"></span>
+        <span class="logo-tagline"><strong>Commit To Achieve<strong></span>
+    </div>
+</nav>
+
+<!-- Thank You Section -->
+<section class="hero thank-you">
+    <div class="container">
+        <div class="section-header">
+            <h1 style="margin-top: 20px;">Thank <span>You!</span></h1>
+            <p class="hero-description">Your feedback has been successfully submitted.</p>
+        </div>
+
+        <div class="thank-you-message">
+            <div class="checkmark"><i class="fas fa-check-circle"></i></div>
+            <p>Thank you for taking the time to provide your valuable feedback. It will help us improve the training experience for everyone.</p>
+            <div id="feedbackSummary" class="feedback-summary"></div>
+            <div class="button-row">
+                <a href="index.html" class="cta-button"><i class="fas fa-arrow-left"></i> Return to Feedback Form</a>
+                <a href="https://www.youtube.com/c/codersarcade" target="_blank" class="cta-button youtube-button"><i class="fab fa-youtube"></i> Visit Our YouTube</a>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <!-- Thank You Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Thank <span>You!</span></h2>
-                <p class="section-subtitle">Your feedback has been successfully submitted.</p>
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 Coders Arcade | Trainer Feedback System. All rights reserved.</p>
+    </div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const summaryContainer = document.getElementById("feedbackSummary");
+
+    // Get saved feedback data
+    const data = JSON.parse(localStorage.getItem("feedbackData"));
+
+    if (data) {
+        // Build feedback summary
+        let html = `
+            <div class="summary-card">
+                <h3>Your Feedback Summary</h3>
+                <ul>
+                    <li><strong>Submitted By:</strong> ${data.submittedBy || "N/A"}</li>
+                    <li><strong>Trainer Name:</strong> ${data.trainerName || "N/A"}</li>
+                    <li><strong>Topics Covered:</strong> ${data.topics || "N/A"}</li>
+                    <li><strong>Concepts:</strong> ${data.concepts || "N/A"}</li>
+                    <li><strong>Interaction:</strong> ${data.interaction || "N/A"}</li>
+                    <li><strong>Delivery:</strong> ${data.delivery || "N/A"}</li>
+                    <li><strong>Comments:</strong> ${data.comments || "No additional comments"}</li>
+                </ul>
             </div>
+        `;
+        summaryContainer.innerHTML = html;
+    } else {
+        summaryContainer.innerHTML = `<p style="color:#bbb;">No feedback data found.</p>`;
+    }
+});
+</script>
 
-            <div style="text-align: center; padding: 40px 0;">
-                <div style="font-size: 5rem; color: var(--primary-green); margin-bottom: 20px;">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h3 style="color: var(--white); margin-bottom: 15px;">Feedback Received</h3>
-                <p style="color: #bbb; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Thank you for taking the time to provide your valuable feedback. It will help us improve the training experience for everyone.
-                </p>
-                <a href="index.html" class="cta-button">
-                    <i class="fas fa-arrow-left"></i> Return to Feedback Form
-                </a>
-            </div>
-        </div>
-    </section>
+<!-- Clear localStorage once feedback successfully submitted -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        localStorage.removeItem('feedbackData');
+    });
+</script>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Trainer Feedback System. All rights reserved.</p>
-        </div>
-    </footer>
 </body>
 </html>

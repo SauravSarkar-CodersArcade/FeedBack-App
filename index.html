@@ -1,149 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-    <title>Trainer Feedback System</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<title>Coders Arcade | Trainer Feedback System</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <span class="logo-icon"><i class="fas fa-chalkboard-teacher"></i></span>
-                <span class="logo-text">Trainer<span>Feedback</span></span>
-            </div>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">
+            <span class="logo-icon">
+                <img src="logo.png" alt="Coders Arcade Logo">
+            </span>
+            <span class="logo-text">Coders Arcade</span>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Trainer Feedback <span>System</span></h1>
-                <p class="hero-description">Help us improve the learning experience by providing your valuable feedback</p>
-            </div>
+<!-- Hero Section -->
+<header class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Trainer Feedback System</h1>
+            <p class="hero-description">Help us improve the learning experience by providing your valuable feedback</p>
         </div>
-    </header>
+    </div>
+</header>
 
-    <!-- Feedback Form Section -->
-    <section class="section feedback-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Submit Your <span>Feedback</span></h2>
-                <p class="section-subtitle">Your opinion matters to us</p>
-            </div>
+<!-- Feedback Form Section -->
+<section class="section feedback-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Submit Your <span>Feedback</span></h2>
+            <p class="section-subtitle">Your opinion matters to us</p>
+        </div>
 
-            <form id="feedbackForm" action="https://formsubmit.co/saurav.tripillar@gmail.com" method="POST" class="feedback-form">
-                <!-- FormSubmit Configuration -->
-                <input type="hidden" name="_subject" value="New Trainer Feedback Submission">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_next" value="https://sauravsarkar-codersarcade.github.io/FeedBack-App/thank-you">
-                <input type="hidden" name="_captcha" value="false">
+        <form id="feedbackForm" action="https://formsubmit.co/saurav.tripillar@gmail.com" method="POST" class="feedback-form">
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value="New Trainer Feedback Submission">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://sauravsarkar-codersarcade.github.io/FeedBack-App/thank-you">
+            <input type="hidden" name="_captcha" value="false">
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="submittedBy">Your Name</label>
-                        <input type="text" id="submittedBy" name="submittedBy" required placeholder="Enter your full name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="trainerName">Trainer's Name</label>
-                        <select id="trainerName" name="trainerName" required>
-                            <option value="">Select a trainer</option>
-                            <option value="Ashank David">Ashank David</option>
-                            <option value="Anup Tiwari">Anup Tiwari</option>
-                            <option value="Nirmal Shekhar">Nirmal Shekhar</option>
-                            <option value="Raushan Kumar Baitha">Raushan Kumar Baitha</option>
-                            <option value="Saurav Sarkar">Saurav Sarkar</option>
-                        </select>
-                    </div>
+            <!-- Student Details -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="submittedBy"><i class="fas fa-user"></i> Your Name</label>
+                    <input type="text" id="submittedBy" name="submittedBy" required placeholder="Enter your full name">
                 </div>
+                <div class="form-group">
+                    <label for="usn"><i class="fas fa-id-card"></i> USN</label>
+                    <input type="text" id="usn" name="usn" required placeholder="Enter your USN">
+                </div>
+            </div>
 
-                <!-- Rating Sections -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="contact"><i class="fas fa-phone"></i> Contact Number</label>
+                    <input type="tel" id="contact" name="contact" required placeholder="Enter your contact number">
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Mail</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="department"><i class="fas fa-building"></i> Department & Section </label>
+                    <input type="text" id="department" name="department" required placeholder="Enter your department and section">
+                </div>
+                <div class="form-group">
+                    <label for="semester"><i class="fas fa-calendar-alt"></i> Semester</label>
+                    <input type="text" id="semester" name="semester" required placeholder="Enter your semester">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+        <label for="college"><i class="fas fa-university"></i> College</label>
+        <input type="text" id="college" name="college" required placeholder="Enter your college">
+    </div>
+                <div class="form-group">
+                    <label for="trainerName"><i class="fas fa-chalkboard-teacher"></i> Trainer's Name</label>
+                    <select id="trainerName" name="trainerName" required>
+                        <option value="">Select a trainer</option>
+                        <option value="Ashank David">Ashank David</option>
+                        <option value="Anup Tiwari">Anup Tiwari</option>
+                        <option value="Nirmal Shekhar">Nirmal Shekhar</option>
+                        <option value="Raushan Kumar Baitha">Raushan Kumar Baitha</option>
+                        <option value="Saurav Sarkar">Saurav Sarkar</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Rating Categories -->
+            <div class="rating-categories">
                 <div class="rating-category">
-                    <h3>Topics Covered</h3>
+                    <h3><i class="fas fa-book"></i> Topics Covered</h3>
                     <p>How well were the training topics covered?</p>
-                    <div class="rating-slider">
-                        <input type="range" id="topics" name="topics" min="1" max="5" value="3" oninput="updateRating(this)">
-                        <div class="rating-labels">
-                            <span>1 (Poor)</span>
-                            <span class="rating-value" id="topicsValue">3</span>
-                            <span>5 (Very Good)</span>
-                        </div>
+                    <select id="topics" name="topics" onchange="updateRating(this)">
+                        <option value="1">1 (Poor)</option>
+                        <option value="2">2 (Below Average)</option>
+                        <option value="3" selected>3 (Average)</option>
+                        <option value="4">4 (Good)</option>
+                        <option value="5">5 (Very Good)</option>
+                    </select>
+                    <div class="rating-labels">
+                        <span id="topicsLabel">1 (Poor)</span>
+                        <span class="rating-value" id="topicsValue">3</span>
+                        <span id="topicsLabelMax">5 (Very Good)</span>
                     </div>
                 </div>
 
                 <div class="rating-category">
-                    <h3>Concept Clarity</h3>
+                    <h3><i class="fas fa-lightbulb"></i> Concept Clarity</h3>
                     <p>How clear were the concepts explained?</p>
-                    <div class="rating-slider">
-                        <input type="range" id="concepts" name="concepts" min="1" max="5" value="3" oninput="updateRating(this)">
-                        <div class="rating-labels">
-                            <span>1 (Poor)</span>
-                            <span class="rating-value" id="conceptsValue">3</span>
-                            <span>5 (Very Good)</span>
-                        </div>
+                    <select id="concepts" name="concepts" onchange="updateRating(this)">
+                        <option value="1">1 (Poor)</option>
+                        <option value="2">2 (Below Average)</option>
+                        <option value="3" selected>3 (Average)</option>
+                        <option value="4">4 (Good)</option>
+                        <option value="5">5 (Very Good)</option>
+                    </select>
+                    <div class="rating-labels">
+                        <span id="conceptsLabel">1 (Poor)</span>
+                        <span class="rating-value" id="conceptsValue">3</span>
+                        <span id="conceptsLabelMax">5 (Very Good)</span>
                     </div>
                 </div>
 
                 <div class="rating-category">
-                    <h3>Interaction & Engagement</h3>
+                    <h3><i class="fas fa-comments"></i> Interaction & Engagement</h3>
                     <p>How engaging was the training session?</p>
-                    <div class="rating-slider">
-                        <input type="range" id="interaction" name="interaction" min="1" max="5" value="3" oninput="updateRating(this)">
-                        <div class="rating-labels">
-                            <span>1 (Poor)</span>
-                            <span class="rating-value" id="interactionValue">3</span>
-                            <span>5 (Very Good)</span>
-                        </div>
+                    <select id="interaction" name="interaction" onchange="updateRating(this)">
+                        <option value="1">1 (Poor)</option>
+                        <option value="2">2 (Below Average)</option>
+                        <option value="3" selected>3 (Average)</option>
+                        <option value="4">4 (Good)</option>
+                        <option value="5">5 (Very Good)</option>
+                    </select>
+                    <div class="rating-labels">
+                        <span id="interactionLabel">1 (Poor)</span>
+                        <span class="rating-value" id="interactionValue">3</span>
+                        <span id="interactionLabelMax">5 (Very Good)</span>
                     </div>
                 </div>
 
                 <div class="rating-category">
-                    <h3>Delivery Style</h3>
+                    <h3><i class="fas fa-microphone"></i> Delivery Style</h3>
                     <p>How effective was the trainer's delivery style?</p>
-                    <div class="rating-slider">
-                        <input type="range" id="delivery" name="delivery" min="1" max="5" value="3" oninput="updateRating(this)">
-                        <div class="rating-labels">
-                            <span>1 (Poor)</span>
-                            <span class="rating-value" id="deliveryValue">3</span>
-                            <span>5 (Very Good)</span>
-                        </div>
+                    <select id="delivery" name="delivery" onchange="updateRating(this)">
+                        <option value="1">1 (Poor)</option>
+                        <option value="2">2 (Below Average)</option>
+                        <option value="3" selected>3 (Average)</option>
+                        <option value="4">4 (Good)</option>
+                        <option value="5">5 (Very Good)</option>
+                    </select>
+                    <div class="rating-labels">
+                        <span id="deliveryLabel">1 (Poor)</span>
+                        <span class="rating-value" id="deliveryValue">3</span>
+                        <span id="deliveryLabelMax">5 (Very Good)</span>
                     </div>
                 </div>
+            </div>
 
-                <!-- Overall Rating Display -->
-                <div class="overall-rating">
-                    <h3>Overall Rating</h3>
-                    <div class="rating-display">
-                        <span class="rating-number" id="overallRating">3.0</span>
-                        <span class="rating-out-of">/ 5</span>
-                    </div>
-                    <p class="rating-comment" id="ratingComment">Average</p>
+            <!-- Overall Rating -->
+            <div class="overall-rating">
+                <h3>Overall Rating</h3>
+                <div class="rating-display">
+                    <span class="rating-number" id="overallRating">3.0</span>
+                    <span class="rating-out-of">/ 5</span>
                 </div>
+                <p class="rating-comment" id="ratingComment">Average</p>
+            </div>
 
-                <button type="submit" class="cta-button submit-button">
-                    <i class="fas fa-paper-plane"></i> Submit Feedback
-                </button>
-            </form>
-        </div>
-    </section>
+            <button type="submit" class="cta-button submit-button">
+                <i class="fas fa-paper-plane"></i> Submit Feedback
+            </button>
+        </form>
+    </div>
+</section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Trainer Feedback System. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="scripts.js"></script>
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 Coders Arcade | Trainer Feedback System. All rights reserved.</p>
+    </div>
+</footer>
+<script src="scripts.js"></script>
 </body>
 </html>
